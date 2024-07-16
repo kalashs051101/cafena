@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Images</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'blogstyle.css' %}">
+
+  </head>
+
+  
+  <body>
+    {% comment %} {% include 'header.html' %}  {% endcomment %}
+    
+    {% comment %} {% for i in fileshow %}
+    <div class = "blog-item">
+      <div class = "blog-img">
+        <img src="{{ i.file.url }}" height='20px' width='20px' />
+        <!-- <img src = "images/blog-p-4.jpg" alt = ""> -->
+        <span><i class = "far fa-heart"></i></span>
+      </div>
+      <div class = "blog-text">
+        <span>20 January, 2020</span>
+        <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
+        <p>{{ i.desc }}</p>
+        <!-- <a href = "#">Read More</a> -->
+      </div>
+    </div>
+    
+    
+    <div class="container">
+      <!-- <img src="{{ i.file.url }}"  height='25%' width="25%" /> -->
+      <h4>{{ i.desc }}</h4>
+    </div>
+    
+    {% endfor %} {% endcomment %}
+    
+    
+    
+    <section class = "blog" id = "blog" style='background: black'>
+      <div class = "container">
+        <div class = "title">
+          <h2>Latest Blog</h2>
+          <p>recent blogs about Coffee</p>
+        </div>
+        <div class = "blog-content">
+          <!-- item -->
+          {% for i in fileshow %}
+          <div class = "blog-item">
+            <div class = "blog-img">
+              <img src="{{ i.file.url }}" height='25%' width="25%">
+              <h4>{{ i.desc }}</h4>
+              {% comment %} <span><i class = "far fa-heart"></i></span> {% endcomment %}
+            </div>
+            <div class = "blog-text">
+              {% comment %} <span>20 January, 2020</span> {% endcomment %}
+              {% comment %} <h2>Lorem ipsum, dolor sit amet consectetur adipisicing</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis libero quas ipsum laudantium nihil! Quaerat.</p> {% endcomment %}
+              {% comment %} <a href = "#">Read More</a> {% endcomment %}
+            </div>
+          </div>
+          {% endfor %}
+          <!-- end of item -->
+          
+          
+        </div>
+      </div>
+    </section>
+    
+  </body>
+  </html>
